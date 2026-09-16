@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="AI리터러시지도사 최민정 - AI 인공지능, 콘텐츠 기획·제작, 온라인 마케팅 실전 교육">
+<title>AI리터러시지도사 최민정 | AI · 콘텐츠 · 온라인 마케팅</title>
+<style>
+:root{
+  --navy:#07182f; --navy2:#0c2747; --green:#0c3d37; --cyan:#18c9e8;
+  --gold:#d9b86c; --ivory:#f7f5ef; --white:#fff; --text:#172236; --muted:#68758a;
+  --line:rgba(7,24,47,.10); --shadow:0 22px 60px rgba(7,24,47,.13);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:"Pretendard","Noto Sans KR","Malgun Gothic",sans-serif;color:var(--text);background:#fff;line-height:1.65}
+a{text-decoration:none;color:inherit}
+button{font:inherit}
+.container{width:min(1160px,calc(100% - 40px));margin:auto}
+header{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(255,255,255,.82);backdrop-filter:blur(18px);border-bottom:1px solid rgba(7,24,47,.08)}
+.nav{height:76px;display:flex;align-items:center;justify-content:space-between}
+.logo{display:flex;align-items:center;gap:11px;font-weight:900;color:var(--navy)}
+.logo-mark{width:38px;height:38px;border-radius:12px;background:linear-gradient(145deg,var(--navy),var(--green));display:grid;place-items:center;color:#fff;box-shadow:0 8px 20px rgba(7,24,47,.2);font-size:15px}
+.logo small{display:block;font-size:11px;color:var(--muted);font-weight:600;letter-spacing:.03em}
+.navlinks{display:flex;gap:25px;font-size:14px;font-weight:700}
+.navlinks a{color:#39465a}
+.navlinks a:hover{color:var(--cyan)}
+.nav-cta{padding:11px 18px;border-radius:99px;background:var(--navy);color:#fff;font-weight:800;font-size:13px;box-shadow:0 8px 20px rgba(7,24,47,.18)}
+.hero{padding:155px 0 105px;background:
+ radial-gradient(circle at 82% 25%,rgba(24,201,232,.18),transparent 25%),
+ radial-gradient(circle at 73% 70%,rgba(217,184,108,.14),transparent 24%),
+ linear-gradient(135deg,#fbfaf6 0%,#eef5f3 100%);overflow:hidden;position:relative}
+.hero:before{content:"";position:absolute;width:520px;height:520px;border:1px solid rgba(12,61,55,.12);border-radius:50%;right:-180px;top:70px}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:60px;align-items:center}
+.badge{display:inline-flex;align-items:center;gap:8px;padding:8px 13px;border-radius:99px;background:#fff;border:1px solid var(--line);font-size:12px;font-weight:800;color:var(--green);box-shadow:0 8px 25px rgba(7,24,47,.06)}
+.badge i{width:7px;height:7px;border-radius:50%;background:var(--cyan);box-shadow:0 0 0 5px rgba(24,201,232,.12)}
+h1{font-size:clamp(42px,5.2vw,72px);line-height:1.08;letter-spacing:-.055em;margin:24px 0 24px;color:var(--navy)}
+h1 em{font-style:normal;background:linear-gradient(90deg,var(--green),#117f76);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero-copy{font-size:19px;color:#536074;max-width:620px}
+.hero-copy strong{color:var(--navy)}
+.actions{display:flex;gap:12px;margin-top:32px;flex-wrap:wrap}
+.btn{display:inline-flex;justify-content:center;align-items:center;padding:15px 22px;border-radius:14px;font-weight:850;font-size:14px;transition:.25s;cursor:pointer}
+.btn-primary{background:var(--navy);color:#fff;box-shadow:0 14px 28px rgba(7,24,47,.22)}
+.btn-primary:hover{transform:translateY(-3px)}
+.btn-light{background:#fff;border:1px solid var(--line);color:var(--navy)}
+.hero-note{display:flex;gap:24px;margin-top:38px;color:var(--muted);font-size:12px;font-weight:700}
+.hero-note span{display:flex;gap:7px;align-items:center}
+.hero-note b{color:var(--gold);font-size:17px}
+.visual{min-height:470px;position:relative;display:grid;place-items:center}
+.orbit{width:410px;height:410px;border:1px solid rgba(12,61,55,.18);border-radius:50%;position:relative;transform:rotate(-10deg)}
+.orbit:before,.orbit:after{content:"";position:absolute;border-radius:50%;border:1px solid rgba(24,201,232,.18)}
+.orbit:before{inset:42px}.orbit:after{inset:92px}
+.ai-core{position:absolute;inset:50%;transform:translate(-50%,-50%);width:190px;height:190px;border-radius:38px;background:linear-gradient(145deg,var(--navy),var(--green));box-shadow:0 35px 65px rgba(7,24,47,.30);display:grid;place-items:center;color:#fff;text-align:center}
+.ai-core .chip{font-size:50px;font-weight:900;letter-spacing:-.08em}
+.ai-core p{margin:-42px 0 0;font-size:11px;letter-spacing:.18em;color:#bfeef3}
+.float-card{position:absolute;background:rgba(255,255,255,.94);border:1px solid rgba(255,255,255,.9);box-shadow:var(--shadow);border-radius:18px;padding:16px 18px;backdrop-filter:blur(12px);font-size:12px;font-weight:800}
+.float-card b{display:block;font-size:17px;color:var(--navy)}
+.card-a{top:28px;right:10px}.card-b{bottom:54px;left:0}.card-c{top:150px;left:4px}
+section{padding:105px 0}
+.section-head{display:flex;justify-content:space-between;gap:30px;align-items:end;margin-bottom:45px}
+.eyebrow{color:var(--green);font-size:12px;font-weight:900;letter-spacing:.15em;text-transform:uppercase}
+h2{font-size:clamp(31px,4vw,48px);line-height:1.15;letter-spacing:-.045em;margin:9px 0 0;color:var(--navy)}
+.section-desc{max-width:480px;color:var(--muted);font-size:15px}
+.expertise{background:#fff}
+.expertise-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.ex-card{padding:31px;border-radius:25px;background:linear-gradient(145deg,#fff,#f5f8f6);border:1px solid var(--line);box-shadow:0 14px 40px rgba(7,24,47,.07);position:relative;overflow:hidden;transition:.3s}
+.ex-card:hover{transform:translateY(-7px);box-shadow:0 24px 55px rgba(7,24,47,.13)}
+.ex-card:after{content:"";position:absolute;width:130px;height:130px;border-radius:50%;right:-55px;top:-55px;background:rgba(24,201,232,.08)}
+.num{font-size:12px;font-weight:900;color:var(--gold);letter-spacing:.12em}
+.ex-card h3{font-size:25px;color:var(--navy);margin:18px 0 10px}
+.ex-card p{color:var(--muted);font-size:14px}
+.tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:21px}
+.tag{padding:6px 9px;border-radius:8px;background:#fff;border:1px solid var(--line);font-size:11px;font-weight:750;color:#4f5b6e}
+.audience{background:var(--ivory)}
+.audience-grid{display:grid;grid-template-columns:1fr 1.4fr;gap:50px;align-items:center}
+.audience-list{display:grid;grid-template-columns:repeat(2,1fr);gap:13px}
+.audience-item{background:#fff;border:1px solid var(--line);border-radius:16px;padding:19px;box-shadow:0 10px 28px rgba(7,24,47,.06)}
+.audience-item strong{display:block;color:var(--navy);font-size:15px}.audience-item span{font-size:12px;color:var(--muted)}
+.method{background:linear-gradient(135deg,var(--navy),#0c3a37);color:#fff}
+.method h2,.method .section-desc{color:#fff}.method .section-desc{opacity:.72}
+.method-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+.step{padding:25px 16px;text-align:center;border:1px solid rgba(255,255,255,.13);border-radius:18px;background:rgba(255,255,255,.06);backdrop-filter:blur(8px)}
+.step .circle{width:48px;height:48px;margin:0 auto 14px;border-radius:50%;display:grid;place-items:center;border:1px solid rgba(24,201,232,.5);color:#8eeaf5;font-weight:900}
+.step strong{display:block;font-size:14px}.step span{display:block;margin-top:5px;font-size:11px;color:rgba(255,255,255,.62)}
+.programs{background:#fbfbfa}
+.program-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.program{background:#fff;border:1px solid var(--line);border-radius:23px;padding:28px;box-shadow:0 12px 35px rgba(7,24,47,.06)}
+.program .label{font-size:11px;color:var(--green);font-weight:900}.program h3{font-size:22px;margin:8px 0;color:var(--navy)}
+.program ul{padding-left:18px;color:var(--muted);font-size:13px}.program li{margin:5px 0}
+.cases{background:#fff}
+.case-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.case{min-height:250px;border-radius:22px;padding:27px;color:#fff;background:linear-gradient(145deg,#102a48,#0d4b44);box-shadow:var(--shadow);position:relative;overflow:hidden}
+.case:after{content:"";position:absolute;width:180px;height:180px;border:1px solid rgba(255,255,255,.1);border-radius:50%;right:-70px;bottom:-70px}
+.case small{color:#a7e8ef;font-weight:800}.case h3{font-size:20px;margin:12px 0}.case p{font-size:13px;color:rgba(255,255,255,.72)}
+.process{padding-top:75px;padding-bottom:75px;background:var(--ivory)}
+.process-box{display:grid;grid-template-columns:1fr 1.4fr;gap:50px;align-items:center}
+.quote{font-size:29px;line-height:1.4;font-weight:850;letter-spacing:-.04em;color:var(--navy)}
+.quote em{font-style:normal;color:var(--green)}
+.checks{display:grid;gap:11px}.check{padding:15px 18px;border-radius:14px;background:#fff;border:1px solid var(--line);font-size:13px;font-weight:750}.check b{color:var(--cyan);margin-right:8px}
+.cta{padding:100px 0;background:radial-gradient(circle at 80% 20%,rgba(24,201,232,.18),transparent 28%),linear-gradient(135deg,#06172d,#0a3935);color:#fff;text-align:center}
+.cta h2{color:#fff}.cta p{color:rgba(255,255,255,.7);max-width:650px;margin:15px auto 0}.cta .btn{margin-top:28px}
+footer{background:#04101f;color:#8c99aa;padding:30px 0;font-size:11px}.footer-inner{display:flex;justify-content:space-between;gap:20px}.footer-inner strong{color:#fff}
+#topBtn{position:fixed;right:22px;bottom:22px;width:52px;height:52px;border:0;border-radius:16px;background:var(--navy);color:#fff;font-weight:850;font-size:12px;box-shadow:0 12px 30px rgba(7,24,47,.28);cursor:pointer;z-index:999;opacity:0;visibility:hidden;transform:translateY(10px);transition:.25s}
+#topBtn.show{opacity:1;visibility:visible;transform:none}
+.mobile-menu{display:none;border:0;background:transparent;font-size:23px;color:var(--navy)}
+@media(max-width:900px){
+ .navlinks{display:none}.mobile-menu{display:block}
+ .hero-grid,.audience-grid,.process-box{grid-template-columns:1fr}
+ .visual{min-height:400px}.hero{padding-top:125px}
+ .expertise-grid,.case-grid{grid-template-columns:1fr 1fr}
+ .method-grid{grid-template-columns:repeat(3,1fr)}
+}
+@media(max-width:620px){
+ .container{width:min(100% - 28px,1160px)}
+ .nav{height:68px}.nav-cta{display:none}
+ section{padding:72px 0}
+ .hero{padding:110px 0 70px}.hero-copy{font-size:16px}
+ h1{font-size:43px}.hero-note{gap:12px;flex-wrap:wrap}
+ .visual{min-height:330px}.orbit{width:300px;height:300px}.ai-core{width:140px;height:140px;border-radius:28px}.ai-core .chip{font-size:37px}.ai-core p{margin:-32px 0 0;font-size:8px}
+ .card-a{top:5px;right:0}.card-b{bottom:20px;left:0}.card-c{top:105px;left:-3px}
+ .section-head{display:block}.section-desc{margin-top:18px}
+ .expertise-grid,.case-grid,.program-grid{grid-template-columns:1fr}
+ .audience-list{grid-template-columns:1fr 1fr}
+ .method-grid{grid-template-columns:1fr 1fr}
+ .method-grid .step:last-child{grid-column:1/-1}
+ .quote{font-size:24px}
+ .footer-inner{display:block}.footer-inner div+div{margin-top:8px}
+ #topBtn{right:14px;bottom:14px;width:48px;height:48px}
+}
+
+.profile-box{display:grid;grid-template-columns:.9fr 1.5fr;gap:20px}
+.profile-card{border-radius:25px;padding:30px;background:linear-gradient(145deg,#07182f,#0c3d37);color:#fff;display:flex;align-items:center;gap:20px;box-shadow:var(--shadow)}
+.profile-avatar{width:84px;height:84px;border-radius:24px;display:grid;place-items:center;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);font-size:23px;font-weight:900;color:#8eeaf5}
+.profile-name{font-size:28px;font-weight:900}.profile-title{font-size:12px;color:rgba(255,255,255,.68);margin-top:4px}
+.profile-points{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.profile-points>div{padding:25px;border:1px solid var(--line);border-radius:20px;background:#fff;box-shadow:0 12px 32px rgba(7,24,47,.06)}
+.profile-points b{display:block;color:var(--navy);margin-bottom:7px}.profile-points span{font-size:12px;color:var(--muted)}
+.contact-cards{display:flex;justify-content:center;gap:12px;margin:30px auto 0;flex-wrap:wrap}
+.contact-cards div{min-width:190px;padding:16px 20px;border-radius:15px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14)}
+.contact-cards span{display:block;font-size:10px;color:#8eeaf5;letter-spacing:.12em;font-weight:900}.contact-cards strong{display:block;margin-top:3px;font-size:13px;color:#fff}
+@media(max-width:900px){.profile-box{grid-template-columns:1fr}.profile-points{grid-template-columns:1fr 1fr}}
+@media(max-width:620px){.profile-points{grid-template-columns:1fr}.contact-cards div{min-width:150px}}
+
+/* DARK MODE */
+body.dark-mode{
+  --ivory:#0b1524;
+  --white:#0f1c2d;
+  --text:#e8eef6;
+  --muted:#a9b6c8;
+  --line:rgba(255,255,255,.11);
+  --shadow:0 22px 60px rgba(0,0,0,.30);
+  background:#07111e;
+}
+body.dark-mode header{background:rgba(7,17,30,.84);border-bottom-color:rgba(255,255,255,.08)}
+body.dark-mode .logo,
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode .ex-card h3,
+body.dark-mode .program h3,
+body.dark-mode .audience-item strong,
+body.dark-mode .profile-points b,
+body.dark-mode .quote{color:#f4f8fc}
+body.dark-mode .navlinks a{color:#b8c5d6}
+body.dark-mode .hero{background:
+ radial-gradient(circle at 82% 25%,rgba(24,201,232,.12),transparent 25%),
+ radial-gradient(circle at 73% 70%,rgba(217,184,108,.08),transparent 24%),
+ linear-gradient(135deg,#081524 0%,#0b2627 100%)}
+body.dark-mode .hero:before{border-color:rgba(255,255,255,.08)}
+body.dark-mode .badge,
+body.dark-mode .btn-light,
+body.dark-mode .float-card,
+body.dark-mode .ex-card,
+body.dark-mode .audience-item,
+body.dark-mode .program,
+body.dark-mode .profile-points>div,
+body.dark-mode .check{background:#101e30;border-color:rgba(255,255,255,.10)}
+body.dark-mode .tag{background:#142235;border-color:rgba(255,255,255,.10);color:#bdc9d8}
+body.dark-mode .expertise,
+body.dark-mode .cases{background:#07111e}
+body.dark-mode .audience,
+body.dark-mode .programs,
+body.dark-mode .process{background:#0b1524}
+body.dark-mode .card-a,
+body.dark-mode .card-b,
+body.dark-mode .card-c{color:#e8eef6}
+body.dark-mode .float-card b{color:#fff}
+body.dark-mode .section-desc,
+body.dark-mode .hero-copy,
+body.dark-mode .ex-card p,
+body.dark-mode .program li,
+body.dark-mode .audience-item span,
+body.dark-mode .profile-points span{color:#a9b6c8}
+body.dark-mode footer{background:#030a13}
+body.dark-mode #themeBtn{background:#f4f8fc;color:#07182f}
+#themeBtn{
+  width:42px;height:42px;border:1px solid rgba(7,24,47,.10);
+  border-radius:50%;background:#fff;color:var(--navy);cursor:pointer;
+  display:grid;place-items:center;font-size:18px;box-shadow:0 7px 18px rgba(7,24,47,.12);
+  transition:.25s
+}
+#themeBtn:hover{transform:translateY(-2px) rotate(8deg)}
+.theme-label{display:none}
+@media(max-width:900px){
+  #themeBtn{width:40px;height:40px}
+}
+@media(max-width:620px){
+  #themeBtn{width:38px;height:38px;font-size:16px}
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <a class="logo" href="#home"><span class="logo-mark">AI</span><span>최민정 강사<small>AI LITERACY INSTRUCTOR</small></span></a>
+    <nav class="navlinks">
+      <a href="#expertise">전문분야</a><a href="#audience">교육대상</a><a href="#programs">교육프로그램</a><a href="#cases">교육사례</a>
+    </nav>
+    <div style="display:flex;align-items:center;gap:10px"><button id="themeBtn" aria-label="다크모드 전환" title="다크모드 전환">☾</button><a class="nav-cta" href="#contact">출강 문의</a></div>
+    <button class="mobile-menu" aria-label="메뉴">☰</button>
+  </div>
+</header>
+
+<main id="home">
+
+<!-- 01 HERO -->
+<section class="hero" id="hero">
+ <div class="container hero-grid">
+  <div>
+   <span class="badge"><i></i> AI리터러시지도사 · 실전형 교육 전문가</span>
+   <h1>AI를 이해하고,<br><em>직접 만들고 활용하는</em><br>실전 교육</h1>
+   <p class="hero-copy"><strong>AI 인공지능 · 콘텐츠 기획·제작 · 온라인 마케팅</strong>을 중심으로 소상공인, 기업, 공공기관, 학교와 교육현장에 맞는 실습 중심 프로그램을 설계합니다.</p>
+   <div class="actions"><a class="btn btn-primary" href="#contact">우리 기관 교육 문의하기 →</a><a class="btn btn-light" href="#programs">교육 프로그램 보기</a></div>
+   <div class="hero-note"><span><b>01</b> 설명보다 실습</span><span><b>02</b> 대상별 맞춤 설계</span><span><b>03</b> 결과물 중심</span></div>
+  </div>
+  <div class="visual">
+   <div class="orbit"><div class="ai-core"><div><div class="chip">AI</div><p>UNDERSTAND · CREATE · USE</p></div></div></div>
+   <div class="float-card card-a"><b>AI Literacy</b>이해 · 질문 · 검증 · 활용</div>
+   <div class="float-card card-b"><b>Content</b>기획 · 이미지 · 영상 · 숏폼</div>
+   <div class="float-card card-c"><b>Marketing</b>SNS · 브랜드 · 온라인 홍보</div>
+  </div>
+ </div>
+</section>
+
+<!-- 02 PROFILE -->
+<section class="expertise" id="profile">
+ <div class="container">
+  <div class="section-head"><div><div class="eyebrow">02 · Profile</div><h2>AI를 가르치는 사람에서<br>AI를 활용하게 만드는 강사로</h2></div><p class="section-desc">AI리터러시지도사 최민정은 어려운 기술을 쉽게 이해하고, 교육생이 직접 활용할 수 있도록 실전 중심으로 교육합니다.</p></div>
+  <div class="profile-box">
+   <div class="profile-card"><div class="profile-avatar">CM</div><div><div class="profile-name">최민정</div><div class="profile-title">AI리터러시지도사 · AI · 콘텐츠 · 온라인 마케팅 강사</div></div></div>
+   <div class="profile-points">
+    <div><b>쉽게 이해하는 AI</b><span>복잡한 AI 개념을 교육생 눈높이에 맞춰 설명합니다.</span></div>
+    <div><b>직접 해보는 실습</b><span>설명 → 시연 → 실습 → 결과물 제작까지 연결합니다.</span></div>
+    <div><b>현장에 맞춘 교육</b><span>기관·기업·학교의 대상과 목적에 따라 프로그램을 설계합니다.</span></div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<!-- 03 EXPERTISE -->
+<section class="audience" id="expertise">
+ <div class="container">
+  <div class="section-head"><div><div class="eyebrow">03 · Expertise</div><h2>세 가지 전문분야,<br>하나의 교육 방향</h2></div><p class="section-desc">AI를 배우는 데서 끝나지 않고 콘텐츠와 마케팅까지 연결해 실제 업무와 생활에서 활용할 수 있도록 교육합니다.</p></div>
+  <div class="expertise-grid">
+   <article class="ex-card"><span class="num">01 / AI</span><h3>AI 인공지능</h3><p>생성형 AI의 기본 이해부터 ChatGPT 활용, 프롬프트, 업무 활용과 AI 리터러시까지.</p><div class="tags"><span class="tag">생성형 AI</span><span class="tag">ChatGPT</span><span class="tag">프롬프트</span><span class="tag">AI 리터러시</span></div></article>
+   <article class="ex-card"><span class="num">02 / CONTENT</span><h3>콘텐츠 기획·제작</h3><p>아이디어를 콘텐츠로 발전시키고 AI를 활용해 이미지·영상·숏폼 등 결과물을 완성합니다.</p><div class="tags"><span class="tag">기획</span><span class="tag">AI 이미지</span><span class="tag">AI 영상</span><span class="tag">숏폼</span></div></article>
+   <article class="ex-card"><span class="num">03 / MARKETING</span><h3>온라인 마케팅</h3><p>고객을 이해하고 온라인 채널에 맞는 콘텐츠를 기획해 홍보와 마케팅에 활용합니다.</p><div class="tags"><span class="tag">SNS</span><span class="tag">블로그</span><span class="tag">브랜딩</span><span class="tag">콘텐츠 마케팅</span></div></article>
+  </div>
+ </div>
+</section>
+
+<!-- 04 AUDIENCE -->
+<section class="audience" id="audience2">
+ <div class="container audience-grid">
+  <div><div class="eyebrow">04 · Audience</div><h2>교육 대상에 따라<br>다르게 설계합니다</h2><p class="section-desc">같은 AI 교육이라도 대상의 업무, 연령, 디지털 경험과 교육 목적에 따라 실습과 결과물을 다르게 구성합니다.</p></div>
+  <div class="audience-list">
+   <div class="audience-item"><strong>🏪 소상공인 · 자영업자</strong><span>AI 홍보 · 콘텐츠 · 마케팅</span></div>
+   <div class="audience-item"><strong>🏢 중소기업</strong><span>AI 업무 활용 · 콘텐츠</span></div>
+   <div class="audience-item"><strong>🏛 공공기관</strong><span>AI 리터러시 · 업무 활용</span></div>
+   <div class="audience-item"><strong>👩‍💼 공무원</strong><span>생성형 AI · 업무 효율화</span></div>
+   <div class="audience-item"><strong>🧑‍🎓 청소년</strong><span>AI 리터러시 · 콘텐츠 · 진로</span></div>
+   <div class="audience-item"><strong>📚 사서 · 교사</strong><span>AI 수업 · 자료 · 콘텐츠</span></div>
+  </div>
+ </div>
+</section>
+
+<!-- 05 METHOD -->
+<section class="method" id="method">
+ <div class="container">
+  <div class="section-head"><div><div class="eyebrow" style="color:#8eeaf5">05 · Method</div><h2>설명에서 끝나지 않는<br>5단계 실전 교육</h2></div><p class="section-desc">교육생이 직접 해보고, 결과물을 만들고, 자신의 업무에 연결하도록 설계합니다.</p></div>
+  <div class="method-grid">
+   <div class="step"><div class="circle">01</div><strong>이해</strong><span>핵심 개념을 쉽게</span></div>
+   <div class="step"><div class="circle">02</div><strong>시연</strong><span>실제 화면으로 확인</span></div>
+   <div class="step"><div class="circle">03</div><strong>실습</strong><span>개별 PC로 직접 실행</span></div>
+   <div class="step"><div class="circle">04</div><strong>제작</strong><span>나만의 결과물 완성</span></div>
+   <div class="step"><div class="circle">05</div><strong>공유</strong><span>결과를 나누고 확장</span></div>
+  </div>
+ </div>
+</section>
+
+<!-- 06 PROGRAMS -->
+<section class="programs" id="programs">
+ <div class="container">
+  <div class="section-head"><div><div class="eyebrow">06 · Programs</div><h2>대표 교육 프로그램</h2></div><p class="section-desc">기관의 교육 목적과 대상에 따라 주제·시간·난이도·실습 결과물을 조정할 수 있습니다.</p></div>
+  <div class="program-grid">
+   <article class="program"><span class="label">AI LITERACY</span><h3>생성형 AI 시대의 실전 AI리터러시</h3><ul><li>AI와 생성형 AI 이해</li><li>ChatGPT 활용과 좋은 질문 만들기</li><li>프롬프트 작성 및 결과 검증</li><li>안전하고 책임 있는 AI 활용</li></ul></article>
+   <article class="program"><span class="label">AI CONTENT</span><h3>AI로 기획하고 만드는 콘텐츠 제작</h3><ul><li>콘텐츠 아이디어 발상과 기획</li><li>AI 이미지·영상 제작</li><li>카드뉴스·숏폼 콘텐츠 제작</li><li>완성 결과물 공유와 피드백</li></ul></article>
+   <article class="program"><span class="label">AI MARKETING</span><h3>AI 활용 온라인 마케팅 실전</h3><ul><li>고객과 타깃 이해</li><li>SNS·블로그 콘텐츠 기획</li><li>AI를 활용한 홍보문·콘텐츠 제작</li><li>온라인 채널 운영 아이디어</li></ul></article>
+   <article class="program"><span class="label">CUSTOM</span><h3>기관·기업 맞춤형 AI 교육</h3><ul><li>교육 대상과 업무 분석</li><li>기관 목적에 맞춘 커리큘럼 설계</li><li>실습 중심 교육 운영</li><li>교육 결과물 중심 구성</li></ul></article>
+  </div>
+ </div>
+</section>
+
+<!-- 07 FIELD -->
+<section class="cases" id="cases">
+ <div class="container">
+  <div class="section-head"><div><div class="eyebrow">07 · Field</div><h2>교육 현장에서<br>실제로 활용되는 교육</h2></div><p class="section-desc">공공기관·기업·학교·교육기관 등 다양한 현장에 적용할 수 있도록 교육 목적에 맞춰 구성합니다.</p></div>
+  <div class="case-grid">
+   <article class="case"><small>PUBLIC</small><h3>공공기관 · 평생학습</h3><p>성인 학습자를 위한 AI 리터러시와 생성형 AI 실습 중심 프로그램.</p></article>
+   <article class="case"><small>BUSINESS</small><h3>기업 · 소상공인</h3><p>업무 효율화부터 콘텐츠와 온라인 홍보까지 현장 활용 중심으로 구성.</p></article>
+   <article class="case"><small>EDUCATION</small><h3>학교 · 청소년 · 교사</h3><p>연령과 디지털 경험을 고려한 AI 리터러시·콘텐츠 교육.</p></article>
+  </div>
+ </div>
+</section>
+
+<!-- 08 PHILOSOPHY -->
+<section class="process" id="philosophy">
+ <div class="container process-box">
+  <div><div class="eyebrow">08 · Philosophy</div><p class="quote">“AI를 잘 아는 것보다<br><em>AI를 실제로 활용할 수 있게 하는 것.</em>”</p></div>
+  <div class="checks">
+   <div class="check"><b>✓</b> 어려운 AI 개념을 이해하기 쉬운 언어로 설명</div>
+   <div class="check"><b>✓</b> 교육생의 수준과 목적에 맞춘 단계별 실습</div>
+   <div class="check"><b>✓</b> 강의 시간 안에 직접 결과물을 만들어 보는 구성</div>
+   <div class="check"><b>✓</b> 교육 이후에도 활용할 수 있는 실전 중심 자료</div>
+  </div>
+ </div>
+</section>
+
+<!-- 09 CONTACT -->
+<section id="contact" class="cta">
+ <div class="container">
+  <div class="eyebrow" style="color:#8eeaf5">09 · Contact</div>
+  <h2>우리 기관에 맞는<br>AI 교육을 시작해보세요</h2>
+  <p>교육 대상, 인원, 시간, 주제에 맞춰 실습 중심의 맞춤형 교육 프로그램을 함께 설계합니다.</p>
+  <div class="contact-cards">
+   <div><span>EDUCATION</span><strong>AI · 콘텐츠 · 마케팅</strong></div>
+   <div><span>FOR</span><strong>기관 · 기업 · 학교</strong></div>
+   <div><span>TYPE</span><strong>맞춤형 · 실습형 교육</strong></div>
+  </div>
+  <a class="btn btn-light" href="mailto:your-email@example.com">출강·교육 문의하기 ✉</a>
+ </div>
+</section>
+</main>
+
+<footer><div class="container footer-inner"><div><strong>AI리터러시지도사 최민정</strong> · AI · 콘텐츠 · 온라인 마케팅</div><div>© 2026 CHOI MIN-JEONG. All rights reserved.</div></div></footer>
+<button id="topBtn" aria-label="맨 위로">맨 위 ↑</button>
+<script>
+const topBtn=document.getElementById('topBtn');
+window.addEventListener('scroll',()=>{topBtn.classList.toggle('show',window.scrollY>350)});
+topBtn.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{
+ const el=document.querySelector(a.getAttribute('href')); if(el){e.preventDefault();el.scrollIntoView({behavior:'smooth'})}
+}));
+</script>
+
+<script>
+const themeBtn = document.getElementById('themeBtn');
+const savedTheme = localStorage.getItem('choiMinjeongTheme');
+if(savedTheme === 'dark'){
+  document.body.classList.add('dark-mode');
+  themeBtn.textContent = '☀';
+}
+themeBtn.addEventListener('click', ()=>{
+  const dark = document.body.classList.toggle('dark-mode');
+  themeBtn.textContent = dark ? '☀' : '☾';
+  localStorage.setItem('choiMinjeongTheme', dark ? 'dark' : 'light');
+});
+</script>
+</body>
+</html>
